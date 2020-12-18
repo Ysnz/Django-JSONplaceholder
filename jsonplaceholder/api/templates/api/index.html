@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center">
+					<h1>{{ title }}</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<ul class="collection">
+						{% for user in users %}
+							<li class="collection-item"><a href='users/{{user.id}}'> {{user.name}} </a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<p>If there is no users listed press <a href="/getusers">here</a> to fetch data. </p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+{% endblock %}
